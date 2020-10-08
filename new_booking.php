@@ -66,38 +66,30 @@
 									<button id="panel-button" class="mdl-button mdl-js-button mdl-button--icon pull-right" data-upgraded=",MaterialButton">
 										<i class="material-icons">more_vert</i>
 									</button>
-									<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" data-mdl-for="panel-button">
-										<li class="mdl-menu__item"><i class="material-icons">assistant_photo</i>Action
-										</li>
-										<li class="mdl-menu__item"><i class="material-icons">print</i>Another action
-										</li>
-										<li class="mdl-menu__item"><i class="material-icons">favorite</i>Something else
-											here</li>
-									</ul>
 								</div>
 								<div class="card-body row">
 									<div class="col-lg-6 p-t-20">
 										<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
-											<input class="mdl-textfield__input" type="text" id="txtFirstName">
+											<input name="firstname" class="mdl-textfield__input" type="text" id="txtFirstName">
 											<label class="mdl-textfield__label">First Name</label>
 										</div>
 									</div>
 									<div class="col-lg-6 p-t-20">
 										<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
-											<input class="mdl-textfield__input" type="text" id="txtLasttName">
+											<input name="lastname" class="mdl-textfield__input" type="text" id="txtLasttName">
 											<label class="mdl-textfield__label">Last Name</label>
 										</div>
 									</div>
 									<div class="col-lg-6 p-t-20">
 										<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
-											<input class="mdl-textfield__input" type="email" id="txtemail">
+											<input name="email" class="mdl-textfield__input" type="email" id="txtemail">
 											<label class="mdl-textfield__label">Email</label>
 											<span class="mdl-textfield__error">Enter Valid Email Address!</span>
 										</div>
 									</div>
 									<div class="col-lg-6 p-t-20">
 										<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label getmdl-select getmdl-select__fix-height txt-full-width">
-											<input class="mdl-textfield__input" type="text" id="sample2" value="" readonly="" tabindex="-1">
+											<input name="gender" class="mdl-textfield__input" type="text" id="sample2" value="" readonly="" tabindex="-1">
 											<label for="sample2" class="pull-right margin-0">
 												<i class="mdl-icon-toggle__label material-icons">keyboard_arrow_down</i>
 											</label>
@@ -110,26 +102,26 @@
 									</div>
 									<div class="col-lg-6 p-t-20">
 										<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
-											<input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="text5">
+											<input name="phone" class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="text5">
 											<label class="mdl-textfield__label" for="text5">Mobile Number</label>
 											<span class="mdl-textfield__error">Number required!</span>
 										</div>
 									</div>
 									<div class="col-lg-6 p-t-20">
 										<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
-											<input class="mdl-textfield__input" type="text" id="txtCity">
+											<input name="city" class="mdl-textfield__input" type="text" id="txtCity">
 											<label class="mdl-textfield__label">City</label>
 										</div>
 									</div>
 									<div class="col-lg-6 p-t-20">
 										<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
-											<input class="mdl-textfield__input" type="text" id="date">
+											<input name="arrived" class="mdl-textfield__input" type="text" id="date">
 											<label class="mdl-textfield__label">Arrive</label>
 										</div>
 									</div>
 									<div class="col-lg-6 p-t-20">
 										<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
-											<input class="mdl-textfield__input" type="text" id="date2">
+											<input name="departure" class="mdl-textfield__input" type="text" id="date2">
 											<label class="mdl-textfield__label">Depart</label>
 										</div>
 									</div>
@@ -140,16 +132,7 @@
 												<i class="mdl-icon-toggle__label material-icons">keyboard_arrow_down</i>
 											</label>
 											<label for="list2" class="mdl-textfield__label">No Of Persons</label>
-											<ul data-mdl-for="list2" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
-												<li class="mdl-menu__item" data-val="1">1</li>
-												<li class="mdl-menu__item" data-val="2">2</li>
-												<li class="mdl-menu__item" data-val="3">3</li>
-												<li class="mdl-menu__item" data-val="4">4</li>
-												<li class="mdl-menu__item" data-val="5">5</li>
-												<li class="mdl-menu__item" data-val="6">6</li>
-												<li class="mdl-menu__item" data-val="7">7</li>
-												<li class="mdl-menu__item" data-val="8">8</li>
-											</ul>
+											
 										</div>
 									</div>
 									<div class="col-lg-6 p-t-20">

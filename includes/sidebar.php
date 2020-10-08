@@ -38,15 +38,11 @@
 								<ul class="sub-menu">
 									<li class="nav-item active">
 										<a href="index.php" class="nav-link ">
-											<span class="title">Dashboard 1</span>
+											<span class="title">Dashboard </span>
 											<span class="selected"></span>
 										</a>
 									</li>
-									<li class="nav-item ">
-										<a href="dashboard2.php" class="nav-link ">
-											<span class="title">Dashboard </span>
-										</a>
-									</li>
+									
 								</ul>
 							</li>
 							
@@ -180,10 +176,7 @@
 									<span class="arrow"></span>
 								</a>
 								<ul class="sub-menu">
-									<li class="nav-item">
-										<a href="timeline.php" class="nav-link "> <span class="title">Timeline</span>
-										</a>
-									</li>
+									
 									<li class="nav-item">
 										<a href="login.php" class="nav-link "> <span class="title">Login</span>
 										</a>
@@ -222,10 +215,7 @@
 										<a href="page-404.php" class="nav-link "> <span class="title">404 Page</span>
 										</a>
 									</li>
-									<li class="nav-item">
-										<a href="page-500.php" class="nav-link "> <span class="title">500 Page</span>
-										</a>
-									</li>
+									
 									<li class="nav-item">
 										<a href="blank_page.php" class="nav-link "> <span class="title">Blank
 												Page</span>

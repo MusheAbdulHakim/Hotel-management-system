@@ -22,7 +22,7 @@
 	<div class="limiter">
 		<div class="container-login100 page-background">
 			<div class="wrap-login100">
-				<form class="form-404">
+				<form action="index.php" class="form-404">
 					<span class="login100-form-logo">
 						<i class="zmdi zmdi-flower"></i>
 					</span>
@@ -35,11 +35,7 @@
 							Go to home page
 						</button>
 					</div>
-					<div class="text-center p-t-27">
-						<a class="txt1" href="#">
-							Need Help?
-						</a>
-					</div>
+
 				</form>
 			</div>
 		</div>

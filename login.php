@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿<?
+	include_once("includes/config.php");
+?>
+<!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">

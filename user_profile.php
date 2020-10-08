@@ -72,23 +72,7 @@
 										<!-- END SIDEBAR USER TITLE -->
 										</div>
 								</div>
-								<div class="card">
-									<div class="card-head card-topline-aqua">
-										<header>About Me</header>
-									</div>
-									<div class="card-body no-padding height-12">
-										<div class="profile-desc">
-											Hello I am John Deo a Professor in xyz College Surat. I love to work with
-											all my college staff and seniour professors.
-										</div>
-										<ul class="list-group list-group-unbordered">
-											<li class="list-group-item">
-												<b>Gender </b>
-												<div class="profile-desc-item pull-right">Female</div>
-											</li>
-										</ul>
-									</div>
-								</div>
+								
 
 								<div class="card ">
 									<div class="card-head card-topline-aqua">
@@ -135,12 +119,16 @@
 														<div class="col-md-3 col-6 b-r"> <strong>Email</strong>
 															<br>
 															<p class="text-muted">johndeo@example.com</p>
-														</div>
-														
-													</div>
+														</div>													</div>
 													<hr>
 													
 												</div>
+												<ul class="list-group list-group-unbordered">
+													<li class="list-group-item">
+														<b>Gender </b>
+														<div class="profile-desc-item pull-right">Female</div>
+													</li>
+												</ul>
 											</div>
 											
 											<div class="tab-pane" id="tab3">
@@ -148,34 +136,23 @@
 													<div class="col-md-12 col-sm-12">
 														<div class="card-head">
 															<header>Password Change</header>
-															<button id="panel-button2" class="mdl-button mdl-js-button mdl-button--icon pull-right" data-upgraded=",MaterialButton">
-																<i class="material-icons">more_vert</i>
-															</button>
-															<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" data-mdl-for="panel-button2">
-																<li class="mdl-menu__item"><i class="material-icons">assistant_photo</i>Action
-																</li>
-																<li class="mdl-menu__item"><i class="material-icons">print</i>Another action
-																</li>
-																<li class="mdl-menu__item"><i class="material-icons">favorite</i>Something
-																	else here</li>
-															</ul>
 														</div>
 														<div class="card-body " id="bar-parent1">
-															<form>
+															<form method="POST">
 																<div class="form-group">
 																	<label for="simpleFormEmail">User Name</label>
-																	<input type="email" class="form-control" id="simpleFormEmail" placeholder="Enter user name">
+																	<input name="username" type="text" class="form-control" id="simpleFormEmail" placeholder="Enter user name">
 																</div>
 																<div class="form-group">
 																	<label for="simpleFormPassword">Current
 																		Password</label>
-																	<input type="password" class="form-control" id="simpleFormPassword" placeholder="Current Password">
+																	<input name="password" type="password" class="form-control" id="simpleFormPassword" placeholder="Current Password">
 																</div>
 																<div class="form-group">
 																	<label for="simpleFormPassword">New Password</label>
-																	<input type="password" class="form-control" id="newpassword" placeholder="New Password">
+																	<input name="new_password" type="password" class="form-control" id="newpassword" placeholder="New Password">
 																</div>
-																<button type="submit" class="btn btn-primary">Submit</button>
+																<button type="submit" name="update_change" class="btn btn-primary">Submit</button>
 															</form>
 														</div>
 													</div>
