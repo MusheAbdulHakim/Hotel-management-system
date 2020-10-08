@@ -1,4 +1,8 @@
-﻿<!DOCTYPE html>
+﻿<?php
+	include_once("includes/config.php");
+	include_once("includes/crons/functions.php");
+?>
+<!DOCTYPE html>
 <html lang="en">
 <!-- BEGIN HEAD -->
 

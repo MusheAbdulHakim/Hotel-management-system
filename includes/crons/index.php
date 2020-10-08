@@ -1,0 +1,1 @@
+<?php echo "where you are trying to access is forbidden folk"; ?>
