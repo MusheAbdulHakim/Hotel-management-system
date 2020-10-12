@@ -1,6 +1,29 @@
 ﻿<?php 
-include_once("includes/config.php"); 
+	session_start();
+	error_reporting(0);
+	include('includes/config.php');
+	include_once('includes/functions.php');
+	if(strlen($_SESSION['userlogin'])==0){
+		header('location:login.php');
+	}elseif (isset($_POST['add_room'])) {
+		$room_number = htmlspecialchars($_POST['room_number']);
+		$room_type = htmlspecialchars($_POST['room_type']);
+		$AC = htmlspecialchars($_POST['ac_condition']);
+		$meal = htmlspecialchars($_POST['meal']);
+		$phone = htmlspecialchars($_POST['phone']);
+		$rent = htmlspecialchars($_POST['rent']);
 
+		//graabbing the ppicture
+		$file = $_FILES['image']['name'];
+		$file_loc = $_FILES['image']['tmp_name'];
+		$folder="rooms/"; 
+		$new_file_name = strtolower($file);
+		$final_file=str_replace(' ','-',$new_file_name);
+		$details = htmlspecialchars($_POST['details']);
+		$sql = "INSERT INTO `rooms` (`id`, `Room_Number`, `Room_Type`, `AC`, `Meal`, `Telephone`, `Rent`, `Picture`, `Details`, `Date`) VALUES (NULL, '', '', '', '', '', '', '', '', '')
+		";
+
+	}
 
 ?>
 <!DOCTYPE html>
@@ -11,7 +34,7 @@ include_once("includes/config.php");
 	<meta content="width=device-width, initial-scale=1" name="viewport">
 	<meta name="description" content="Responsive Admin Template">
 	<meta name="author" content="SmartUniversity">
-	<title>Spice Hotel | Bootstrap 4 Admin Dashboard Template + UI Kit</title>
+	<title>Spice Hotel || Add Room</title>
 	<!-- icons -->
 	<link href="assets/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css">
 	<link href="assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -138,7 +161,7 @@ include_once("includes/config.php");
 										</div>
 										<div class="col-lg-12 p-t-20">
 											<label class="control-label col-md-3" for="picture">Upload Room Photo</label>
-												<input name="photo" class="mdl-textfield__input" type="file" id="picture">
+												<input name="image" class="mdl-textfield__input" type="file" id="picture">
 										</div>
 										<div class="col-lg-12 p-t-20">
 											<div class="mdl-textfield mdl-js-textfield txt-full-width">

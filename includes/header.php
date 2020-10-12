@@ -100,7 +100,7 @@
 								</li>
 								
 								<li>
-									<a href="login.php">
+									<a href="logout.php">
 										<i class="icon-logout"></i> Log Out </a>
 								</li>
 							</ul>
