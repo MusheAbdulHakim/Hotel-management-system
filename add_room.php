@@ -56,7 +56,6 @@
 	<link rel="shortcut icon" href="assets/img/favicon.ico">
 </head>
 <!-- END HEAD -->
-
 <body class="page-header-fixed sidemenu-closed-hidelogo page-content-white page-md header-white dark-sidebar-color logo-dark">
 	<div class="page-wrapper">
 		<!-- start header -->
