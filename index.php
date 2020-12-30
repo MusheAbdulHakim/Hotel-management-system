@@ -1,6 +1,8 @@
 ﻿<?php
-	include_once("includes/config.php");
-	include_once("includes/crons/functions.php");
+	require_once 'includes/library.php';
+	$app = new HotelLib();
+	$is_login = $app->user_session();
+	
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -39,12 +41,12 @@
 <body class="page-header-fixed sidemenu-closed-hidelogo page-content-white page-md header-white dark-sidebar-color logo-dark">
 	<div class="page-wrapper">
 		<!-- start header -->
-		<?php include_once 'includes/header.php'; ?>
+		<?php include_once 'templates/header.php'; ?>
 		<!-- end header -->
 		<!-- start page container -->
 		<div class="page-container">
 			<!-- start sidebar menu -->
-			<?php include 'includes/sidebar.php'; ?>
+			<?php include 'templates/sidebar.php'; ?>
 			<!-- end sidebar menu -->
 			<!-- start page content -->
 			<div class="page-content-wrapper">
@@ -876,7 +878,7 @@
 		</div>
 		<!-- end page container -->
 		<!-- start footer -->
-	<?php include_once 'includes/footer.php'; ?>
+	<?php include_once 'templates/footer.php'; ?>
 		<!-- end footer -->
 	</div>
 	<!-- start js include path -->

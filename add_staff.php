@@ -34,12 +34,12 @@
 <body class="page-header-fixed sidemenu-closed-hidelogo page-content-white page-md header-white dark-sidebar-color logo-dark">
 	<div class="page-wrapper">
 		<!-- start header -->
-		<?php include_once 'includes/header.php'; ?>
+		<?php include_once 'templates/header.php'; ?>
 		<!-- end header -->
 		<!-- start page container -->
 		<div class="page-container">
 			<!-- start sidebar menu -->
-			<?php include_once 'includes/sidebar.php'; ?>
+			<?php include_once 'templates/sidebar.php'; ?>
 			<!-- end sidebar menu -->
 			<!-- start page content -->
 			<div class="page-content-wrapper">
@@ -183,12 +183,12 @@
 			</div>
 			<!-- end page content -->
 			<!-- start chat sidebar -->
-			<?php include_once 'includes/settings.php'; ?>
+			<?php include_once 'templates/settings.php'; ?>
 			<!-- end chat sidebar -->
 		</div>
 		<!-- end page container -->
 		<!-- start footer -->
-		<?php include_once 'includes/footer.php'; ?>
+		<?php include_once 'templates/footer.php'; ?>
 		<!-- end footer -->
 	</div>
 	<!-- start js include path -->
