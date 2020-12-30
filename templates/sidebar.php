@@ -21,12 +21,19 @@
 										<a class="tooltips" href="user_profile.php" data-placement="top" data-original-title="Profile">
 											<i class="material-icons">person_outline</i>
 										</a>
-										<a class="tooltips" href="login.php" data-placement="top" data-original-title="Logout">
+										<a class="tooltips" href="email_inbox.php" data-placement="top" data-original-title="Mail">
+											<i class="material-icons">mail_outline</i>
+										</a>
+										<a class="tooltips" href="chat.php" data-placement="top" data-original-title="Chat">
+											<i class="material-icons">chat</i>
+										</a>
+										<a class="tooltips" href="logout.php" data-placement="top" data-original-title="Logout">
 											<i class="material-icons">input</i>
 										</a>
 									</div>
 								</div>
 							</li>
+							
 							
 							<li class="nav-item start ">
 								<a href="#" class="nav-link nav-toggle">
@@ -148,17 +155,6 @@
 									<span class="title">Apps</span> <span class="arrow"></span>
 								</a>
 								<ul class="sub-menu">
-									
-									<li class="nav-item">
-										<a href="contact_list.php" class="nav-link "> <span class="title">Contact
-												List</span>
-										</a>
-									</li>
-									<li class="nav-item">
-										<a href="contact_grid.php" class="nav-link "> <span class="title">Contact
-												Grid</span>
-										</a>
-									</li>
 									<li class="nav-item">
 										<a href="gallery.php" class="nav-link "> <span class="title">Gallery</span>
 										</a>
