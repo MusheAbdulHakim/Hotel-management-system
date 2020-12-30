@@ -1,16 +1,20 @@
-<?php 
-// DB credentials.
-define('DB_HOST','localhost');
-define('DB_USER','root');
-define('DB_PASS','');
-define('DB_NAME','falcon_hotel');
-// Establish database connection.
-try
+<?php
+
+// database Connection variables
+define('HOST', 'localhost'); // Database host name ex. localhost
+define('USER', 'root'); // Database user. ex. root ( if your on local server)
+define('PASSWORD', ''); // user password  (if password is not set for user then keep it empty )
+define('DATABASE', 'falcon_hotel'); // Database Database name
+
+function DataBase()
 {
-$dbh = new PDO("mysql:host=".DB_HOST.";dbname=".DB_NAME,DB_USER, DB_PASS,array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8'"));
-}
-catch (PDOException $e)
-{
-exit("Error: " . $e->getMessage());
+  try {
+      $db = new PDO('mysql:host='.HOST.';dbname='.DATABASE.'', USER, PASSWORD);
+      return $db;
+  } catch (PDOException $e) {
+      return "Error!: " . $e->getMessage();
+      die();
+  }
 }
 ?>
+
