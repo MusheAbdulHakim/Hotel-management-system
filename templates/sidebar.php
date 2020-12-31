@@ -15,16 +15,16 @@
 									</div>
 									<div class="profile-usertitle">
 										<div class="sidebar-userpic-name"> John Deo </div>
-										<div class="profile-usertitle-job"> Manager </div>
+										
 									</div>
 									<div class="sidebar-userpic-btn">
 										<a class="tooltips" href="user_profile.php" data-placement="top" data-original-title="Profile">
 											<i class="material-icons">person_outline</i>
 										</a>
-										<a class="tooltips" href="email_inbox.php" data-placement="top" data-original-title="Mail">
+										<a class="tooltips" href="#" data-placement="top" data-original-title="Mail">
 											<i class="material-icons">mail_outline</i>
 										</a>
-										<a class="tooltips" href="chat.php" data-placement="top" data-original-title="Chat">
+										<a class="tooltips" href="#" data-placement="top" data-original-title="Chat">
 											<i class="material-icons">chat</i>
 										</a>
 										<a class="tooltips" href="logout.php" data-placement="top" data-original-title="Logout">
@@ -32,10 +32,8 @@
 										</a>
 									</div>
 								</div>
-							</li>
-							
-							
-							<li class="nav-item start ">
+							</li>							
+							<li class="nav-item start <?php if(basename($_SERVER['SCRIPT_NAME']) == 'index.php'){echo 'active'; }else { echo ''; } ?>">
 								<a href="#" class="nav-link nav-toggle">
 									<i class="material-icons">dashboard</i>
 									<span class="title">Dashboard</span>
@@ -60,21 +58,17 @@
 									<span class="arrow"></span>
 								</a>
 								<ul class="sub-menu">
-									<li class="nav-item">
+									<li class="nav-item <?php if(basename($_SERVER['SCRIPT_NAME']) == 'new_booking.php'){echo 'active'; }else { echo ''; } ?>">
 										<a href="new_booking.php" class="nav-link ">
 											<span class="title">New Booking</span>
 										</a>
 									</li>
-									<li class="nav-item">
-										<a href="view_booking.php" class="nav-link ">
+									<li class="nav-item ">
+										<a href="view_booking.php" class="nav-link <?php if(basename($_SERVER['SCRIPT_NAME']) == 'view_booking.php'){echo 'active'; }else { echo ''; } ?>">
 											<span class="title">View Booking</span>
 										</a>
 									</li>
-									<li class="nav-item">
-										<a href="edit_booking.php" class="nav-link ">
-											<span class="title">Edit Booking</span>
-										</a>
-									</li>
+									
 								</ul>
 							</li>
 							<li class="nav-item">
@@ -84,21 +78,17 @@
 									<span class="arrow"></span>
 								</a>
 								<ul class="sub-menu">
-									<li class="nav-item">
+									<li class="nav-item <?php if(basename($_SERVER['SCRIPT_NAME']) == 'add_room.php'){echo 'active'; }else { echo ''; } ?>">
 										<a href="add_room.php" class="nav-link ">
 											<span class="title">Add Room Details</span>
 										</a>
 									</li>
-									<li class="nav-item">
+									<li class="nav-item <?php if(basename($_SERVER['SCRIPT_NAME']) == 'all_rooms.php'){echo 'active'; }else { echo ''; } ?>">
 										<a href="all_rooms.php" class="nav-link ">
 											<span class="title">View All Rooms</span>
 										</a>
 									</li>
-									<li class="nav-item">
-										<a href="edit_room.php" class="nav-link ">
-											<span class="title">Edit Room Details</span>
-										</a>
-									</li>
+									
 								</ul>
 							</li>
 							<li class="nav-item">
@@ -118,11 +108,7 @@
 											<span class="title">View All Staffs</span>
 										</a>
 									</li>
-									<li class="nav-item">
-										<a href="edit_staff.php" class="nav-link ">
-											<span class="title">Edit Staff Details</span>
-										</a>
-									</li>
+									
 								</ul>
 							</li>
 							<li class="nav-item">
@@ -142,11 +128,7 @@
 											<span class="title">View All Vehicle</span>
 										</a>
 									</li>
-									<li class="nav-item">
-										<a href="edit_vehicle.php" class="nav-link ">
-											<span class="title">Edit Vehicle Details</span>
-										</a>
-									</li>
+									
 								</ul>
 							</li>
 						
