@@ -1,5 +1,5 @@
 ﻿<?php
-	require_once 'includes/library.php';
+	require_once 'includes/functions.php';
 	$app = new HotelLib();
 	$is_login = $app->user_session();
 	

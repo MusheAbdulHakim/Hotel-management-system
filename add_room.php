@@ -1,8 +1,9 @@
 ﻿<?php 
+	require_once 'libraries/meekrodb/db.class.php';
+	require_once 'includes/functions.php';
+	$app = new HotelLib();
+	global $success_msg;
 	session_start();
-	error_reporting(0);
-	include('templates/config.php');
-	include_once('templates/functions.php');
 	if(strlen($_SESSION['userlogin'])==0){
 		header('location:login.php');
 	}elseif (isset($_POST['add_room'])) {
@@ -12,17 +13,32 @@
 		$meal = htmlspecialchars($_POST['meal']);
 		$phone = htmlspecialchars($_POST['phone']);
 		$rent = htmlspecialchars($_POST['rent']);
-
 		//graabbing the ppicture
 		$file = $_FILES['image']['name'];
 		$file_loc = $_FILES['image']['tmp_name'];
-		$folder="rooms/"; 
+		$folder="uploads/rooms/"; 
 		$new_file_name = strtolower($file);
 		$final_file=str_replace(' ','-',$new_file_name);
+		if (move_uploaded_file($file_loc,$folder.$final_file)) {
+			$image=$final_file;
+		}
 		$details = htmlspecialchars($_POST['details']);
-		$sql = "INSERT INTO `rooms` (`id`, `Room_Number`, `Room_Type`, `AC`, `Meal`, `Telephone`, `Rent`, `Picture`, `Details`, `Date`) VALUES (NULL, '', '', '', '', '', '', '', '', '')
-		";
-
+		$insert = DB::insert('rooms', [
+					  'Room_Number' => $room_number,
+					  'Room_Type' => $room_type,
+					  'AC'=>$AC,
+					  'Meal'=>$meal,
+					  'Telephone'=>$phone,
+					  'Rent'=>$rent,
+					  'Picture'=>$image,
+					  'Details'=>$details,
+					]);
+		if ($insert) {
+			$success_msg = '<div class="alert label-success alert-dismissible" role="alert">
+											<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+											New Room Has Been Added Successfully!
+										</div>';
+		}
 	}
 
 ?>
@@ -40,6 +56,8 @@
 	<link href="assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 	<!--bootstrap -->
 	<link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+	<!-- sweet alerts -->
+	<link rel="stylesheet" href="assets/plugins/sweet-alert/sweetalert.min.css">
 	<!-- Material Design Lite CSS -->
 	<link rel="stylesheet" href="assets/plugins/material/material.min.css">
 	<link rel="stylesheet" href="assets/css/material_style.css">
@@ -83,6 +101,7 @@
 							</ol>
 						</div>
 					</div>
+					<?php echo $success_msg; ?>
 					<div class="row">
 						<div class="col-sm-12">
 							<div class="card-box">
@@ -93,7 +112,7 @@
 									<div class="card-body row">
 										<div class="col-lg-6 p-t-20">
 											<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label txt-full-width">
-												<input name="room_number" class="mdl-textfield__input" type="text" id="txtRoomNo">
+												<input name="room_number" class="mdl-textfield__input" type="text" value="<?php echo 'RM-'.$app->randomString(4); ?>" id="txtRoomNo">
 												<label class="mdl-textfield__label">Room Number</label>
 											</div>
 										</div>
@@ -196,6 +215,9 @@
 	<script src="assets/plugins/jquery-slimscroll/jquery.slimscroll.min.js"></script>
 	<!-- bootstrap -->
 	<script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+	<!-- Sweet Alert -->
+	<script src="assets/plugins/sweet-alert/sweetalert.min.js"></script>
+	<script src="assets/js/pages/sweet-alert/sweet-alert-data.js"></script>
 	<!-- Common js-->
 	<script src="assets/js/app.js"></script>
 	<script src="assets/js/layout.js"></script>

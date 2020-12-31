@@ -1,4 +1,16 @@
-﻿<!DOCTYPE html>
+﻿<?php 
+require_once 'libraries/meekrodb/db.class.php';
+require_once 'includes/functions.php';
+if (isset($_GET['id'])) {
+	$room_id = $_GET['id'];
+	$sql =DB::query("DELETE FROM rooms WHERE id=$room_id");
+	if ($sql) {
+		echo "<script>alert('Room has been deleted')</script>";
+		echo "<script>document.location.href='all_rooms.php'</script>";
+	}
+}
+?>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="utf-8">
@@ -6,7 +18,7 @@
 	<meta content="width=device-width, initial-scale=1" name="viewport">
 	<meta name="description" content="Responsive Admin Template">
 	<meta name="author" content="SmartUniversity">
-	<title>Spice Hotel | Bootstrap 4 Admin Dashboard Template + UI Kit</title>
+	<title>Spice Hotel | All Rooms</title>
 	<!-- icons -->
 	<link href="assets/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css">
 	<link href="assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -113,248 +125,35 @@
 													<th class="center"> Action </th>
 												</tr>
 											</thead>
+											<?php
+												$results = DB::query("SELECT * FROM rooms");
+												foreach ($results as $row) {
+													
+											 ?>
 											<tbody>
 												<tr class="odd gradeX">
 													<td class="user-circle-img">
-														<img src="assets/img/user/user1.jpg" alt="">
+														<img width="50" src="uploads/rooms/<?php echo htmlentities($row['Picture']); ?>" alt="pic">
 													</td>
-													<td class="center">101</td>
-													<td class="center">Single</td>
-													<td class="center">AC</td>
-													<td class="center">Free Dinner</td>
+													<td class="center"><?php echo htmlentities($row['Room_Number']); ?></td>
+													<td class="center"><?php echo htmlentities($row['Room_Type']); ?></td>
+													<td class="center"><?php echo htmlentities($row['AC']); ?></td>
+													<td class="center"><?php echo htmlentities($row['Meal']); ?></td>
 													<td class="center">2</td>
-													<td class="center">123456789</td>
-													<td class="center">25$</td>
+													<td class="center"><?php echo htmlentities($row['Telephone']); ?></td>
+													<td class="center"><?php echo '$'.htmlentities($row['Rent']); ?></td>
 													<td class="center">
-														<a href="edit_room.php" class="btn btn-tbl-edit btn-xs">
+														<a href="edit_room.php?id=<?php echo $row['id']; ?>" class="btn btn-tbl-edit btn-xs">
 															<i class="fa fa-pencil"></i>
 														</a>
-														<a class="btn btn-tbl-delete btn-xs">
-															<i class="fa fa-trash-o "></i>
-														</a>
-													</td>
-												</tr>
-												<tr class="odd gradeX">
-													<td class="user-circle-img">
-														<img src="assets/img/user/user2.jpg" alt="">
-													</td>
-													<td class="center">102</td>
-													<td class="center">Double</td>
-													<td class="center">Non AC</td>
-													<td class="center">Free Lunch</td>
-													<td class="center">3</td>
-													<td class="center">123456789</td>
-													<td class="center">35$</td>
-													<td class="center">
-														<a href="edit_room.php" class="btn btn-tbl-edit btn-xs">
-															<i class="fa fa-pencil"></i>
-														</a>
-														<a class="btn btn-tbl-delete btn-xs">
-															<i class="fa fa-trash-o "></i>
-														</a>
-													</td>
-												</tr>
-												<tr class="odd gradeX">
-													<td class="user-circle-img">
-														<img src="assets/img/user/user3.jpg" alt="">
-													</td>
-													<td class="center">103</td>
-													<td class="center">King</td>
-													<td class="center">AC</td>
-													<td class="center">None</td>
-													<td class="center">5</td>
-													<td class="center">123456789</td>
-													<td class="center">65$</td>
-													<td class="center">
-														<a href="edit_room.php" class="btn btn-tbl-edit btn-xs">
-															<i class="fa fa-pencil"></i>
-														</a>
-														<a class="btn btn-tbl-delete btn-xs">
-															<i class="fa fa-trash-o "></i>
-														</a>
-													</td>
-												</tr>
-												<tr class="odd gradeX">
-													<td class="user-circle-img">
-														<img src="assets/img/user/user1.jpg" alt="">
-													</td>
-													<td class="center">101</td>
-													<td class="center">Single</td>
-													<td class="center">AC</td>
-													<td class="center">Free Dinner</td>
-													<td class="center">2</td>
-													<td class="center">123456789</td>
-													<td class="center">25$</td>
-													<td class="center">
-														<a href="edit_room.php" class="btn btn-tbl-edit btn-xs">
-															<i class="fa fa-pencil"></i>
-														</a>
-														<a class="btn btn-tbl-delete btn-xs">
-															<i class="fa fa-trash-o "></i>
-														</a>
-													</td>
-												</tr>
-												<tr class="odd gradeX">
-													<td class="user-circle-img">
-														<img src="assets/img/user/user2.jpg" alt="">
-													</td>
-													<td class="center">102</td>
-													<td class="center">Double</td>
-													<td class="center">Non AC</td>
-													<td class="center">Free Lunch</td>
-													<td class="center">3</td>
-													<td class="center">123456789</td>
-													<td class="center">35$</td>
-													<td class="center">
-														<a href="edit_room.php" class="btn btn-tbl-edit btn-xs">
-															<i class="fa fa-pencil"></i>
-														</a>
-														<a class="btn btn-tbl-delete btn-xs">
-															<i class="fa fa-trash-o "></i>
-														</a>
-													</td>
-												</tr>
-												<tr class="odd gradeX">
-													<td class="user-circle-img">
-														<img src="assets/img/user/user3.jpg" alt="">
-													</td>
-													<td class="center">103</td>
-													<td class="center">King</td>
-													<td class="center">AC</td>
-													<td class="center">None</td>
-													<td class="center">5</td>
-													<td class="center">123456789</td>
-													<td class="center">65$</td>
-													<td class="center">
-														<a href="edit_room.php" class="btn btn-tbl-edit btn-xs">
-															<i class="fa fa-pencil"></i>
-														</a>
-														<a class="btn btn-tbl-delete btn-xs">
-															<i class="fa fa-trash-o "></i>
-														</a>
-													</td>
-												</tr>
-												<tr class="odd gradeX">
-													<td class="user-circle-img">
-														<img src="assets/img/user/user1.jpg" alt="">
-													</td>
-													<td class="center">101</td>
-													<td class="center">Single</td>
-													<td class="center">AC</td>
-													<td class="center">Free Dinner</td>
-													<td class="center">2</td>
-													<td class="center">123456789</td>
-													<td class="center">25$</td>
-													<td class="center">
-														<a href="edit_room.php" class="btn btn-tbl-edit btn-xs">
-															<i class="fa fa-pencil"></i>
-														</a>
-														<a class="btn btn-tbl-delete btn-xs">
-															<i class="fa fa-trash-o "></i>
-														</a>
-													</td>
-												</tr>
-												<tr class="odd gradeX">
-													<td class="user-circle-img">
-														<img src="assets/img/user/user2.jpg" alt="">
-													</td>
-													<td class="center">102</td>
-													<td class="center">Double</td>
-													<td class="center">Non AC</td>
-													<td class="center">Free Lunch</td>
-													<td class="center">3</td>
-													<td class="center">123456789</td>
-													<td class="center">35$</td>
-													<td class="center">
-														<a href="edit_room.php" class="btn btn-tbl-edit btn-xs">
-															<i class="fa fa-pencil"></i>
-														</a>
-														<a class="btn btn-tbl-delete btn-xs">
-															<i class="fa fa-trash-o "></i>
-														</a>
-													</td>
-												</tr>
-												<tr class="odd gradeX">
-													<td class="user-circle-img">
-														<img src="assets/img/user/user3.jpg" alt="">
-													</td>
-													<td class="center">103</td>
-													<td class="center">King</td>
-													<td class="center">AC</td>
-													<td class="center">None</td>
-													<td class="center">5</td>
-													<td class="center">123456789</td>
-													<td class="center">65$</td>
-													<td class="center">
-														<a href="edit_room.php" class="btn btn-tbl-edit btn-xs">
-															<i class="fa fa-pencil"></i>
-														</a>
-														<a class="btn btn-tbl-delete btn-xs">
-															<i class="fa fa-trash-o "></i>
-														</a>
-													</td>
-												</tr>
-												<tr class="odd gradeX">
-													<td class="user-circle-img">
-														<img src="assets/img/user/user1.jpg" alt="">
-													</td>
-													<td class="center">101</td>
-													<td class="center">Single</td>
-													<td class="center">AC</td>
-													<td class="center">Free Dinner</td>
-													<td class="center">2</td>
-													<td class="center">123456789</td>
-													<td class="center">25$</td>
-													<td class="center">
-														<a href="edit_room.php" class="btn btn-tbl-edit btn-xs">
-															<i class="fa fa-pencil"></i>
-														</a>
-														<a class="btn btn-tbl-delete btn-xs">
-															<i class="fa fa-trash-o "></i>
-														</a>
-													</td>
-												</tr>
-												<tr class="odd gradeX">
-													<td class="user-circle-img">
-														<img src="assets/img/user/user2.jpg" alt="">
-													</td>
-													<td class="center">102</td>
-													<td class="center">Double</td>
-													<td class="center">Non AC</td>
-													<td class="center">Free Lunch</td>
-													<td class="center">3</td>
-													<td class="center">123456789</td>
-													<td class="center">35$</td>
-													<td class="center">
-														<a href="edit_room.php" class="btn btn-tbl-edit btn-xs">
-															<i class="fa fa-pencil"></i>
-														</a>
-														<a class="btn btn-tbl-delete btn-xs">
-															<i class="fa fa-trash-o "></i>
-														</a>
-													</td>
-												</tr>
-												<tr class="odd gradeX">
-													<td class="user-circle-img">
-														<img src="assets/img/user/user3.jpg" alt="">
-													</td>
-													<td class="center">103</td>
-													<td class="center">King</td>
-													<td class="center">AC</td>
-													<td class="center">None</td>
-													<td class="center">5</td>
-													<td class="center">123456789</td>
-													<td class="center">65$</td>
-													<td class="center">
-														<a href="edit_room.php" class="btn btn-tbl-edit btn-xs">
-															<i class="fa fa-pencil"></i>
-														</a>
-														<a class="btn btn-tbl-delete btn-xs">
-															<i class="fa fa-trash-o "></i>
+														<a onclick="return confirm('Are you sure you want to delete!?')" href="all_rooms.php?id=<?php echo $row['id']; ?>" class="btn btn-tbl-delete btn-xs">
+															<i class="fa fa-trash-o danger"></i>
 														</a>
 													</td>
 												</tr>
 											</tbody>
+											<?php 
+											} ?>
 										</table>
 									</div>
 								</div>
